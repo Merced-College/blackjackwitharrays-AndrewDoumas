@@ -44,18 +44,22 @@ void initializeDeck() {
     }
 }
 
+//function to add chips on player win
 void add_chips(){
     chips += player_bet*1.5;
 }
 
+//function to remove chips on player loss
 void remove_chips(){
     chips -= player_bet;
 }
 
+//function to handle betting process
 void betting(){
     
     bool betting = true;
 
+    // loop for betting to make sure valid number is entered
     while(betting){
         cout<<"how many chips would you like to bet?"<<endl;
         cin>> player_bet;
@@ -68,7 +72,7 @@ void betting(){
             betting = false;
         }
     }
-
+    
     cout<< "you bet: "<<player_bet <<"chip(s)"<<endl;
 }
 
@@ -181,7 +185,7 @@ int main() {
     bool player_bust = false;
     string play_again;
 
-
+cout<<"You have "<<chips<<" chip(s)"<<endl;
 while(play_game){
        playerTotal = dealInitialPlayerCards();
        dealerTotal = dealInitialDealerCards();
@@ -206,7 +210,7 @@ while(play_game){
     determineWinner(playerTotal, dealerTotal);
     }
 
-
+    //tell player amount of chips they have
     cout<<"you have "<< chips<<" chips."<<endl;
     cout<<endl;
 
