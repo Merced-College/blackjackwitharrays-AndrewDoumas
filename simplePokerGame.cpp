@@ -214,6 +214,7 @@ while(play_game){
     player_choice = true;
 
     if(chips<=0){
+        cout<<"You have run out of chips, good bye."<<endl;
         player_choice = false;
         play_game = false;
     }
